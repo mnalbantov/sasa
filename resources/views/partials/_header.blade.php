@@ -12,8 +12,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index-2.html"><img class="img-responsive" src="images/logo.png"
-                                                                 alt="Logo"></a>
+                {{--<a class="navbar-brand" href="{{ url('/') }}"><img class="img-responsive" src="{{ asset('images/logo.png') }}"--}}
+                                                                 {{--alt="Logo"></a>--}}
+                <img class="img-responsive" width="100" src="{{ asset('images/logo.png') }}" alt="">
             </div>
             <!-- /navbar-header -->
 
@@ -31,9 +32,9 @@
                 <!-- sign-in -->
                 <ul class="sign-in">
                     <li><i class="fa fa-user"></i></li>
-                    <li><a href="signup.html">Моят профил</a></li>
+                    <li><a href="{{ route ('profile') }}">Моят профил</a>
                 </ul><!-- sign-in -->
-                <a href="ad-post.html" class="btn">ДОБАВИ ОБЯВА</a>
+                <a href="{{ route('post-ad') }}" class="btn">ДОБАВИ ОБЯВА</a>
             </div>
             <!-- nav-right -->
         </div><!-- container -->

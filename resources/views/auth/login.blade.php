@@ -11,7 +11,7 @@
                 <div class="panel-heading">Вход</div>
                 <div class="panel-body">
                     <div class="text-center">
-                        <a href="#" class="btn-primary"><i class="fa fa-facebook-official"></i>&nbsp;&nbsp;Вход с Facebook</a>
+                        <a href="{{ route ('login.fb') }}" class="btn-primary"><i class="fa fa-facebook-official"></i>&nbsp;&nbsp;Вход с Facebook</a>
                     </div>
                     <br>
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">

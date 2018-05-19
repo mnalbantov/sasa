@@ -3,11 +3,12 @@
 <script src="{{ asset('js/app.js') }}"></script>
 
 
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+{{--<script src="{{ asset('js/jquery.min.js') }}"></script>--}}
+{{--<script src="{{ asset('js/bootstrap.min.js') }}"></script>--}}
 {{--<script src="{{ asset('js/owl.carousel.min.js') }}"></script>--}}
 <script src="{{ asset('js/scrollup.min.js') }}"></script>
 <script src="{{ asset('js/custom.js') }}"></script>
+<script src="{{ asset('js/price-range.js') }}"></script>
 {{--<script src="{{ asset('js/smoothscroll.min.js') }}"></script>--}}
 {{--<script src="{{ asset('js/smoothscroll.min.js') }}"></script>--}}
 

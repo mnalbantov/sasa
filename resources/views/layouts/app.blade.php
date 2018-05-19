@@ -15,6 +15,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ url('css/app.css') }}">
+    <link rel="icon" href="http://habitatwc.org/wp-content/uploads/2014/06/habitat1.png">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEw6OPS5Cscr1vP_VCb_PfAmlTU0onm5k&libraries=places&language=bg"></script>
 </head>
 <body>

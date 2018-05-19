@@ -17,8 +17,14 @@ Route::get('/', function () {
 });
 Route::group(['middleware'=>['web','auth']],function (){
     Route::get('/profile','UserController@index')->name('profile');
+    Route::get('/post-ad','AdController@showAdForm')->name('post-ad');
+    Route::get('/getAdOptions','AdController@getAdOptions');
+    Route::post('/post-ad','AdController@store')->name('post.ad');
+    Route::get('/ad/confirm','AdController@confirm')->name('confirm.ad');
 });
 Route::get('/login','Auth\LoginController@showLoginForm')->name('login');
+Route::get('/login/facebook','Auth\LoginController@redirectToProvider')->name('login.fb');
+Route::get('/login/facebook/callback','Auth\LoginController@handleProviderCallback');
 Route::get('/logout','Auth\LoginController@logout')->name('logout');
 Route::get('/register','Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('/register','Auth\RegisterController@register')->name('register.post');

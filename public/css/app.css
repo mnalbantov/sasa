@@ -10542,6 +10542,15 @@ input, select, a, .transition,
 #map #infowindow-content {
 	display: inline;
 }
+.btn span.glyphicon {
+	opacity: 0;
+}
+.btn.active span.glyphicon {
+	opacity: 1;
+}
+input[type='checkbox'] {
+	opacity: 0;
+}
 /* 
  *  Owl Carousel - Animate Plugin
  */
