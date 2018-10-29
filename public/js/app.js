@@ -5,7 +5,7 @@ webpackJsonp([0],[
 "use strict";
 
 
-var bind = __webpack_require__(7);
+var bind = __webpack_require__(8);
 var isBuffer = __webpack_require__(24);
 
 /*global toString:true*/
@@ -443,10 +443,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(9);
+    adapter = __webpack_require__(10);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(9);
+    adapter = __webpack_require__(10);
   }
   return adapter;
 }
@@ -517,7 +517,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ }),
 /* 5 */
@@ -833,6 +833,12 @@ function applyToTag (styleElement, obj) {
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(23);
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -848,8 +854,8 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 8 */,
-/* 9 */
+/* 9 */,
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -860,7 +866,7 @@ var settle = __webpack_require__(27);
 var buildURL = __webpack_require__(29);
 var parseHeaders = __webpack_require__(30);
 var isURLSameOrigin = __webpack_require__(31);
-var createError = __webpack_require__(10);
+var createError = __webpack_require__(11);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(32);
 
 module.exports = function xhrAdapter(config) {
@@ -1036,7 +1042,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1061,7 +1067,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1073,7 +1079,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1099,7 +1105,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6206,7 +6212,7 @@ var index_esm = {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6214,7 +6220,7 @@ var index_esm = {
 /* unused harmony export Http */
 /* unused harmony export Resource */
 /*!
- * vue-resource v1.5.0
+ * vue-resource v1.5.1
  * https://github.com/pagekit/vue-resource
  * Released under the MIT License.
  */
@@ -7772,22 +7778,22 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(16);
+__webpack_require__(17);
 module.exports = __webpack_require__(68);
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vee_validate__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vee_validate__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate_dist_locale_bg__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate_dist_locale_bg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vee_validate_dist_locale_bg__);
 
@@ -7797,7 +7803,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(17);
+__webpack_require__(18);
 
 window.Vue = __webpack_require__(1);
 
@@ -7832,11 +7838,11 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 });
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(18);
+window._ = __webpack_require__(19);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -7845,9 +7851,9 @@ window._ = __webpack_require__(18);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(20);
+  window.$ = window.jQuery = __webpack_require__(21);
 
-  __webpack_require__(21);
+  __webpack_require__(22);
 } catch (e) {}
 
 /**
@@ -7856,7 +7862,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(22);
+window.axios = __webpack_require__(7);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -7892,7 +7898,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -24994,10 +25000,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(19)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(20)(module)))
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -25025,7 +25031,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -35396,7 +35402,7 @@ return jQuery;
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports) {
 
 /*!
@@ -37779,12 +37785,6 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(23);
-
-/***/ }),
 /* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37792,7 +37792,7 @@ module.exports = __webpack_require__(23);
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(7);
+var bind = __webpack_require__(8);
 var Axios = __webpack_require__(25);
 var defaults = __webpack_require__(4);
 
@@ -37827,9 +37827,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(12);
+axios.Cancel = __webpack_require__(13);
 axios.CancelToken = __webpack_require__(39);
-axios.isCancel = __webpack_require__(11);
+axios.isCancel = __webpack_require__(12);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -37982,7 +37982,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(10);
+var createError = __webpack_require__(11);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -38417,7 +38417,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(36);
-var isCancel = __webpack_require__(11);
+var isCancel = __webpack_require__(12);
 var defaults = __webpack_require__(4);
 var isAbsoluteURL = __webpack_require__(37);
 var combineURLs = __webpack_require__(38);
@@ -38577,7 +38577,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(12);
+var Cancel = __webpack_require__(13);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -38685,11 +38685,21 @@ $(document).ready(function () {
         $('#' + tog).prop('value', sel);
         $('a[data-toggle="' + tog + '"]').not('[data-title="' + sel + '"]').removeClass('active').addClass('notActive');
         $('a[data-toggle="' + tog + '"][data-title="' + sel + '"]').removeClass('notActive').addClass('active');
-        if (sel === 1) {
+        if (sel === 0) {
             $('#gender').hide();
+            $('input[name="currentRoommates"]').val('');
             return;
         }
-
+        if (sel === 1) {
+            $('#gender').show();
+            $('label#labelMan').html('Мъж');
+            $('label#labelWoman').html('Жена');
+            $('label#both').hide();
+            return;
+        }
+        $('label#labelMan').html('Мъжe');
+        $('label#labelWoman').html('Жени');
+        $('label#both').show();
         $('#gender').show();
     });
 });
@@ -39494,7 +39504,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource__ = __webpack_require__(15);
 //
 //
 //
@@ -39791,8 +39801,57 @@ exports.push([module.i, "\n#maps[data-v-8201aeae] {\n    width: 100%;\n    heigh
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(14);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -40047,6 +40106,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* Validator */].localize('bg');
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_resource__["a" /* default */]);
+
+window.axios = __webpack_require__(7);
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'app',
     data: function data() {
@@ -40054,11 +40115,18 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             propertyTypes: [],
             propertyAttributes: {},
+            propertyRule: [],
+            propertyRules: {},
             user: {},
-            propertyType: 0,
+            propertyType: '',
+            currentRoommates: 0,
+            genderMates: 0,
             chosenAttributes: [],
+            chosenRules: [],
             title: '',
+            condition: '',
             price: '',
+            utilityCosts: 0,
             lat: 0,
             lng: 0,
             address: '',
@@ -40066,8 +40134,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
             city: '',
             zip_code: '',
             showForm: null,
-            landlord: false
-        };
+            landlord: false,
+            validationErrors: [],
+            errorForm: false,
+            submitted: false };
     },
     mounted: function mounted() {
         var _this = this;
@@ -40076,6 +40146,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
             function: function _function() {}
         }).then(function (data) {
             this.propertyTypes = data.body.propertyTypes;
+            this.propertyRules = data.body.propertyRules;
             this.propertyAttributes = data.body.propertyAttributes;
             this.user = data.body.user;
         });
@@ -40114,7 +40185,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
             for (var i = 0; i < ac.length; i++) {
                 for (var j = 0; j < ac[i].types.length; j++) {
                     if (ac[i].types[j] == 'neighborhood') {
-                        _this.neighborhood = ac[i].short_name;
+                        _this.neighborhood = ac[i].shorterrorForm_name;
                     }
                     if (ac[i].types[j] == 'postal_code') {
                         _this.zip_code = ac[i].short_name;
@@ -40139,7 +40210,26 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
                     _this2.$el.querySelector('[data-vv-id="' + _this2.$validator.errors.items[0].id + '"]').scrollIntoView();
                     return false;
                 }
-                _this2.$refs.form.submit();
+                axios.post('/post-ad', _this2.$data).then(function (response) {
+                    _this2.validationErrors = [];
+                    _this2.errorForm = false;
+                    _this2.submitted = true;
+                    console.log(response);
+                }).catch(function (error) {
+                    if (!_.isEmpty(error.response)) {
+                        if (error.response.status = 422) {
+                            _this2.validationErrors = error.response.data.errors;
+                            _this2.errorForm = true;
+                            _this2.submitted = false;
+                            console.log(_this2.validationErrors);
+                        }
+                    }
+                });
+                // this.$http.post("/post-ad");
+                // this.$refs.form.submit();
+                // console.log(this.$refs.form);
+                // console.log(JSON.stringify(this.data));
+                // return;
             }).catch(function (reason) {
                 console.log(reason);
             });
@@ -40151,7 +40241,13 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
             }
             this.showForm = true;
         },
-
+        resetCounter: function resetCounter() {
+            this.currentRoommates = 0;
+            this.genderMates = 0;
+        },
+        setSingle: function setSingle() {
+            this.genderMates = 0;
+        },
         show: function show() {
             if (this.lat === 0 || this.lng === 0 || !this.address) {
                 this.error = true;
@@ -40240,7 +40336,7 @@ var render = function() {
                 "data-vv-id": "1",
                 name: "location",
                 id: "pac-input",
-                placeholder: "Например: бул Черни Връх, София",
+                placeholder: "Например: кв Лозенец, София",
                 type: "text"
               },
               on: {
@@ -40315,45 +40411,71 @@ var render = function() {
             _c("div", { staticClass: "row form-group" }, [
               _vm._m(2),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-sm-9 user-type" },
-                _vm._l(_vm.propertyTypes, function(type, index) {
-                  return _c("span", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.propertyType,
-                          expression: "propertyType"
+              _c("div", { staticClass: "col-sm-9" }, [
+                _c(
+                  "div",
+                  { attrs: { "data-vv-id": "2" } },
+                  _vm._l(_vm.propertyTypes, function(type) {
+                    return _c("span", [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: "required",
+                            expression: "'required'"
+                          },
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.propertyType,
+                            expression: "propertyType"
+                          }
+                        ],
+                        attrs: {
+                          id: type.name,
+                          type: "radio",
+                          name: "propertyType",
+                          "data-vv-as": "Тип жилище"
+                        },
+                        domProps: {
+                          value: type.id,
+                          checked: _vm._q(_vm.propertyType, type.id)
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.propertyType = type.id
+                          }
                         }
-                      ],
-                      ref: "type",
-                      refInFor: true,
-                      attrs: {
-                        id: type.name,
-                        "data-vv-id": "2",
-                        name: "propertyType",
-                        type: "radio"
-                      },
-                      domProps: {
-                        value: type.id,
-                        checked: _vm._q(_vm.propertyType, type.id)
-                      },
-                      on: {
-                        change: function($event) {
-                          _vm.propertyType = type.id
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("label", { attrs: { for: type.name } }, [
-                      _vm._v(_vm._s(type.name))
+                      }),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: type.name } }, [
+                        _vm._v(_vm._s(type.name))
+                      ])
                     ])
-                  ])
-                })
-              )
+                  })
+                ),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.errors.has("propertyType"),
+                        expression: "errors.has('propertyType')"
+                      }
+                    ],
+                    staticClass: "text-danger"
+                  },
+                  [
+                    _c("strong", [
+                      _vm._v(_vm._s(_vm.errors.first("propertyType")))
+                    ])
+                  ]
+                )
+              ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row form-group additional" }, [
@@ -40368,87 +40490,93 @@ var render = function() {
                 [
                   _c(
                     "div",
-                    {
-                      directives: [
-                        {
-                          name: "validate",
-                          rawName: "v-validate",
-                          value: "required:true",
-                          expression: "'required:true'"
-                        }
-                      ],
-                      staticClass: "checkbox",
-                      attrs: { "data-vv-id": "3", "data-vv-as": "Удобства" },
-                      model: {
-                        value: _vm.chosenAttributes,
-                        callback: function($$v) {
-                          _vm.chosenAttributes = $$v
-                        },
-                        expression: "chosenAttributes"
-                      }
-                    },
-                    _vm._l(_vm.propertyAttributes, function(attr) {
-                      return _c("div", [
-                        _c("label", { attrs: { for: attr.name } }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.chosenAttributes,
-                                expression: "chosenAttributes"
-                              }
-                            ],
-                            attrs: {
-                              type: "checkbox",
-                              name: "propertyAttr[]",
-                              id: attr.name
-                            },
-                            domProps: {
-                              value: attr.id,
-                              checked: Array.isArray(_vm.chosenAttributes)
-                                ? _vm._i(_vm.chosenAttributes, attr.id) > -1
-                                : _vm.chosenAttributes
-                            },
-                            on: {
-                              change: function($event) {
-                                var $$a = _vm.chosenAttributes,
-                                  $$el = $event.target,
-                                  $$c = $$el.checked ? true : false
-                                if (Array.isArray($$a)) {
-                                  var $$v = attr.id,
-                                    $$i = _vm._i($$a, $$v)
-                                  if ($$el.checked) {
-                                    $$i < 0 &&
-                                      (_vm.chosenAttributes = $$a.concat([$$v]))
+                    { staticClass: "checkbox", attrs: { "data-vv-id": "3" } },
+                    [
+                      _vm._l(_vm.propertyAttributes, function(attr) {
+                        return _c("div", [
+                          _c("label", { attrs: { for: attr.name } }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.chosenAttributes,
+                                  expression: "chosenAttributes"
+                                },
+                                {
+                                  name: "validate",
+                                  rawName: "v-validate",
+                                  value: "required:true",
+                                  expression: "'required:true'"
+                                }
+                              ],
+                              attrs: {
+                                type: "checkbox",
+                                name: "propertyAttr[]",
+                                "data-vv-as": "Удобства",
+                                id: attr.name
+                              },
+                              domProps: {
+                                value: attr.id,
+                                checked: Array.isArray(_vm.chosenAttributes)
+                                  ? _vm._i(_vm.chosenAttributes, attr.id) > -1
+                                  : _vm.chosenAttributes
+                              },
+                              on: {
+                                change: function($event) {
+                                  var $$a = _vm.chosenAttributes,
+                                    $$el = $event.target,
+                                    $$c = $$el.checked ? true : false
+                                  if (Array.isArray($$a)) {
+                                    var $$v = attr.id,
+                                      $$i = _vm._i($$a, $$v)
+                                    if ($$el.checked) {
+                                      $$i < 0 &&
+                                        (_vm.chosenAttributes = $$a.concat([
+                                          $$v
+                                        ]))
+                                    } else {
+                                      $$i > -1 &&
+                                        (_vm.chosenAttributes = $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1)))
+                                    }
                                   } else {
-                                    $$i > -1 &&
-                                      (_vm.chosenAttributes = $$a
-                                        .slice(0, $$i)
-                                        .concat($$a.slice($$i + 1)))
+                                    _vm.chosenAttributes = $$c
                                   }
-                                } else {
-                                  _vm.chosenAttributes = $$c
                                 }
                               }
+                            }),
+                            _vm._v(
+                              _vm._s(attr.name) +
+                                "\n                                "
+                            )
+                          ])
+                        ])
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.errors.has("propertyAttr[]"),
+                              expression: "errors.has('propertyAttr[]')"
                             }
-                          }),
-                          _vm._v(
-                            _vm._s(attr.name) +
-                              "\n                                "
-                          )
-                        ])
-                      ])
-                    })
-                  ),
-                  _vm._v(" "),
-                  _vm.errors.has("propertyAttr[]")
-                    ? _c("span", { staticClass: "help-block" }, [
-                        _c("strong", [
-                          _vm._v(_vm._s(_vm.errors.first("propertyAttr[]")))
-                        ])
-                      ])
-                    : _vm._e()
+                          ],
+                          staticClass: "text-danger"
+                        },
+                        [
+                          _c("strong", [
+                            _vm._v(_vm._s(_vm.errors.first("propertyAttr[]")))
+                          ])
+                        ]
+                      )
+                    ],
+                    2
+                  )
                 ]
               )
             ]),
@@ -40511,7 +40639,97 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(5),
+            _c("div", { staticClass: "row form-group select-condition" }, [
+              _vm._m(5),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-sm-9", attrs: { "data-vv-id": "5" } },
+                [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      },
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.condition,
+                        expression: "condition"
+                      }
+                    ],
+                    attrs: {
+                      type: "radio",
+                      "data-vv-as": "Състояние",
+                      name: "condition",
+                      value: "0",
+                      id: "new"
+                    },
+                    domProps: { checked: _vm._q(_vm.condition, "0") },
+                    on: {
+                      change: function($event) {
+                        _vm.condition = "0"
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "new" } }, [_vm._v("Ново")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      },
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.condition,
+                        expression: "condition"
+                      }
+                    ],
+                    attrs: {
+                      type: "radio",
+                      "data-vv-as": "Състояние",
+                      name: "condition",
+                      value: "1",
+                      id: "used"
+                    },
+                    domProps: { checked: _vm._q(_vm.condition, "1") },
+                    on: {
+                      change: function($event) {
+                        _vm.condition = "1"
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "used" } }, [
+                    _vm._v("Използвано")
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.errors.has("condition"),
+                      expression: "errors.has('condition')"
+                    }
+                  ],
+                  staticClass: "text-danger"
+                },
+                [_c("strong", [_vm._v(_vm._s(_vm.errors.first("condition")))])]
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "row form-group select-price" }, [
               _vm._m(6),
@@ -40546,7 +40764,7 @@ var render = function() {
                       step: "any",
                       "data-vv-as": "Наем",
                       name: "price",
-                      "data-vv-id": "5",
+                      "data-vv-id": "6",
                       placeholder: "650 лв"
                     },
                     domProps: { value: _vm.price },
@@ -40570,7 +40788,48 @@ var render = function() {
                   _vm._v(" "),
                   _vm._m(7),
                   _vm._v(" "),
-                  _vm._m(8)
+                  _c(
+                    "div",
+                    {
+                      staticClass: " col-sm-5",
+                      staticStyle: { display: "none" },
+                      attrs: { id: "utilityCosts" }
+                    },
+                    [
+                      _c("small", { attrs: { for: "" } }, [
+                        _vm._v("Комунални сметки на месец (лв)")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.utilityCosts,
+                            expression: "utilityCosts"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "number",
+                          step: "any",
+                          name: "utilityCosts",
+                          value: "",
+                          id: "text1",
+                          placeholder: "300 лв"
+                        },
+                        domProps: { value: _vm.utilityCosts },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.utilityCosts = $event.target.value
+                          }
+                        }
+                      })
+                    ]
+                  )
                 ]
               )
             ]),
@@ -40581,31 +40840,330 @@ var render = function() {
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
-            _c(
-              "label",
-              { staticClass: "control-label", attrs: { for: "fun" } },
-              [_vm._v("Брой съквартиранти")]
-            ),
+            _c("label", { staticClass: "control-label" }, [
+              _vm._v("Брой съквартиранти")
+            ]),
             _vm._v(" "),
-            _vm._m(9),
+            _c("div", { staticClass: "input-group" }, [
+              _c(
+                "div",
+                { staticClass: "btn-group", attrs: { id: "radioBtn" } },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-info btn-sm notActive",
+                      attrs: { "data-toggle": "roommates", "data-title": "0" },
+                      on: {
+                        click: function($event) {
+                          _vm.resetCounter()
+                        }
+                      }
+                    },
+                    [_vm._v("0")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-info btn-sm notActive",
+                      attrs: { "data-toggle": "roommates", "data-title": "1" },
+                      on: {
+                        click: function($event) {
+                          _vm.handler(
+                            (_vm.currentRoommates = 1),
+                            _vm.setSingle()
+                          )
+                        }
+                      },
+                      model: {
+                        value: _vm.currentRoommates,
+                        callback: function($$v) {
+                          _vm.currentRoommates = $$v
+                        },
+                        expression: "currentRoommates"
+                      }
+                    },
+                    [_vm._v("1")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-info btn-sm notActive",
+                      attrs: { "data-toggle": "roommates", "data-title": "2" },
+                      on: {
+                        click: function($event) {
+                          _vm.currentRoommates = 2
+                        }
+                      },
+                      model: {
+                        value: _vm.currentRoommates,
+                        callback: function($$v) {
+                          _vm.currentRoommates = $$v
+                        },
+                        expression: "currentRoommates"
+                      }
+                    },
+                    [_vm._v("2")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-info btn-sm notActive",
+                      attrs: { "data-toggle": "roommates", "data-title": "3" },
+                      on: {
+                        click: function($event) {
+                          _vm.currentRoommates = 3
+                        }
+                      },
+                      model: {
+                        value: _vm.currentRoommates,
+                        callback: function($$v) {
+                          _vm.currentRoommates = $$v
+                        },
+                        expression: "currentRoommates"
+                      }
+                    },
+                    [_vm._v("3")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-info btn-sm notActive",
+                      attrs: { "data-toggle": "roommates", "data-title": "4" },
+                      on: {
+                        click: function($event) {
+                          _vm.currentRoommates = 4
+                        }
+                      },
+                      model: {
+                        value: _vm.currentRoommates,
+                        callback: function($$v) {
+                          _vm.currentRoommates = $$v
+                        },
+                        expression: "currentRoommates"
+                      }
+                    },
+                    [_vm._v("4+")]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "hidden", name: "roommates", id: "roommate" }
+              })
+            ]),
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
-            _vm._m(10),
+            _c(
+              "div",
+              {
+                staticClass: "input-group",
+                staticStyle: { display: "none" },
+                attrs: { id: "gender" }
+              },
+              [
+                _c("div", { staticClass: "btn-group" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required:true",
+                        expression: "'required:true'"
+                      },
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.genderMates,
+                        expression: "genderMates"
+                      }
+                    ],
+                    staticClass: "btn-sm btn-primary notActive",
+                    attrs: {
+                      "data-vv-id": "4",
+                      "data-vv-as": "Пол",
+                      type: "radio",
+                      name: "genderMates",
+                      value: "1",
+                      id: "men",
+                      "data-toggle": "roommates",
+                      "data-title": "1"
+                    },
+                    domProps: { checked: _vm._q(_vm.genderMates, "1") },
+                    on: {
+                      change: function($event) {
+                        _vm.genderMates = "1"
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { id: "labelMan", for: "men" } }, [
+                    _vm._v("Мъже")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.genderMates,
+                        expression: "genderMates"
+                      }
+                    ],
+                    staticClass: "btn-sm btn-primary notActive",
+                    attrs: {
+                      type: "radio",
+                      name: "genderMates",
+                      value: "2",
+                      id: "women",
+                      "data-toggle": "roommates",
+                      "data-title": "2"
+                    },
+                    domProps: { checked: _vm._q(_vm.genderMates, "2") },
+                    on: {
+                      change: function($event) {
+                        _vm.genderMates = "2"
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { id: "labelWoman", for: "women" } }, [
+                    _vm._v("Жени")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.genderMates,
+                        expression: "genderMates"
+                      }
+                    ],
+                    staticClass: "btn-sm btn-primary notActive",
+                    attrs: {
+                      type: "radio",
+                      name: "genderMates",
+                      value: "3",
+                      id: "mixed",
+                      "data-toggle": "roommates",
+                      "data-title": "3"
+                    },
+                    domProps: { checked: _vm._q(_vm.genderMates, "3") },
+                    on: {
+                      change: function($event) {
+                        _vm.genderMates = "3"
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { id: "both", for: "women" } }, [
+                    _vm._v("И двете")
+                  ])
+                ])
+              ]
+            ),
             _vm._v(" "),
             _c("hr"),
             _vm._v(" "),
             _c("h3", [_vm._v("Предпочитани съквартиранти")]),
             _c("br"),
             _vm._v(" "),
-            _vm._m(11)
+            _vm._m(8),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _vm._m(9),
+            _vm._v(" "),
+            _c("div", { staticClass: "row form-group " }, [
+              _c("div", { staticClass: "col-sm-9" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "checkbox",
+                    model: {
+                      value: _vm.chosenRules,
+                      callback: function($$v) {
+                        _vm.chosenRules = $$v
+                      },
+                      expression: "chosenRules"
+                    }
+                  },
+                  _vm._l(_vm.propertyRules, function(rule) {
+                    return _c("span", [
+                      _c("label", { attrs: { for: rule.name } }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.chosenRules,
+                              expression: "chosenRules"
+                            }
+                          ],
+                          attrs: {
+                            type: "checkbox",
+                            name: "propertyRules[]",
+                            id: rule.name
+                          },
+                          domProps: {
+                            value: rule.id,
+                            checked: Array.isArray(_vm.chosenRules)
+                              ? _vm._i(_vm.chosenRules, rule.id) > -1
+                              : _vm.chosenRules
+                          },
+                          on: {
+                            change: function($event) {
+                              var $$a = _vm.chosenRules,
+                                $$el = $event.target,
+                                $$c = $$el.checked ? true : false
+                              if (Array.isArray($$a)) {
+                                var $$v = rule.id,
+                                  $$i = _vm._i($$a, $$v)
+                                if ($$el.checked) {
+                                  $$i < 0 &&
+                                    (_vm.chosenRules = $$a.concat([$$v]))
+                                } else {
+                                  $$i > -1 &&
+                                    (_vm.chosenRules = $$a
+                                      .slice(0, $$i)
+                                      .concat($$a.slice($$i + 1)))
+                                }
+                              } else {
+                                _vm.chosenRules = $$c
+                              }
+                            }
+                          }
+                        }),
+                        _vm._v(_vm._s(rule.name) + "  ")
+                      ])
+                    ])
+                  })
+                ),
+                _vm._v(" "),
+                _vm.errors.has("propertyAttr[]")
+                  ? _c("span", { staticClass: "help-block" }, [
+                      _c("strong", [
+                        _vm._v(_vm._s(_vm.errors.first("propertyAttr[]")))
+                      ])
+                    ])
+                  : _vm._e()
+              ])
+            ]),
+            _vm._v(" "),
+            _c("br")
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "section seller-info" }, [
             _c("h4", [_vm._v("Информация за теб")]),
             _vm._v(" "),
             _c("div", { staticClass: "row form-group" }, [
-              _vm._m(12),
+              _vm._m(10),
               _vm._v(" "),
               _c("div", { staticClass: "col-sm-9" }, [
                 _c("input", {
@@ -40658,24 +41216,50 @@ var render = function() {
                 _c("label", { attrs: { for: "dealer" } }, [_vm._v("Агент")])
               ]),
               _vm._v(" "),
-              _vm._m(13)
+              _vm._m(11)
             ]),
+            _vm._v(" "),
+            _vm._m(12),
+            _vm._v(" "),
+            _vm._m(13),
             _vm._v(" "),
             _vm._m(14),
             _vm._v(" "),
-            _vm._m(15),
-            _vm._v(" "),
-            _vm._m(16),
-            _vm._v(" "),
-            _vm._m(17)
+            _vm._m(15)
           ]),
           _vm._v(" "),
-          _vm._m(18),
+          _vm._m(16),
           _vm._v(" "),
-          _vm._m(19)
+          _vm._m(17),
+          _vm._v(" "),
+          _vm.errors.any()
+            ? _c("div", { staticClass: "panel-body alert alert-danger" }, [
+                _c("p", [
+                  _vm._v(
+                    "Упс... Явно си забравил да попълниш нещо. Върни се нагоре и провери пак!"
+                  )
+                ])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.errorForm
+            ? _c(
+                "div",
+                { attrs: { errors: _vm.validationErrors } },
+                _vm._l(_vm.validationErrors, function(err) {
+                  return _c(
+                    "ul",
+                    { staticClass: "panel-body alert alert-danger" },
+                    [_c("li", [_vm._v(_vm._s(err[0]))])]
+                  )
+                })
+              )
+            : _vm._e()
         ])
       ]
-    )
+    ),
+    _vm._v(" "),
+    _vm.submitted ? _c("div", { staticClass: "load-bar" }) : _vm._e()
   ])
 }
 var staticRenderFns = [
@@ -40740,25 +41324,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row form-group select-condition" }, [
-      _c("label", { staticClass: "col-sm-3" }, [
-        _vm._v("Състояние на жилището"),
-        _c("span", { staticClass: "required" }, [_vm._v("*")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-sm-9" }, [
-        _c("input", {
-          attrs: { type: "radio", name: "condition", value: "new", id: "new" }
-        }),
-        _vm._v(" "),
-        _c("label", { attrs: { for: "new" } }, [_vm._v("Ново")]),
-        _vm._v(" "),
-        _c("input", {
-          attrs: { type: "radio", name: "condition", value: "used", id: "used" }
-        }),
-        _vm._v(" "),
-        _c("label", { attrs: { for: "used" } }, [_vm._v("Използвано")])
-      ])
+    return _c("label", { staticClass: "col-sm-3" }, [
+      _vm._v("Състояние на жилището"),
+      _c("span", { staticClass: "required" }, [_vm._v("*")])
     ])
   },
   function() {
@@ -40787,83 +41355,39 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: " col-sm-5",
-        staticStyle: { display: "none" },
-        attrs: { id: "utilityCosts" }
-      },
-      [
-        _c("small", { attrs: { for: "" } }, [
-          _vm._v("Комунални сметки на месец (лв)")
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: {
-            type: "number",
-            step: "any",
-            name: "utilityCosts",
-            value: "",
-            id: "text1",
-            placeholder: "300 лв"
-          }
-        })
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group" }, [
-      _c("div", { staticClass: "btn-group", attrs: { id: "radioBtn" } }, [
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-info btn-sm notActive",
-            attrs: { "data-toggle": "roommates", "data-title": "1" }
-          },
-          [_vm._v("0")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-info btn-sm notActive",
-            attrs: { "data-toggle": "roommates", "data-title": "1" }
-          },
-          [_vm._v("1")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-info btn-sm notActive",
-            attrs: { "data-toggle": "roommates", "data-title": "2" }
-          },
-          [_vm._v("2")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-info btn-sm notActive",
-            attrs: { "data-toggle": "roommates", "data-title": "3" }
-          },
-          [_vm._v("3")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-info btn-sm notActive",
-            attrs: { "data-toggle": "roommates", "data-title": "4+" }
-          },
-          [_vm._v("4+")]
-        )
-      ]),
+      _c(
+        "div",
+        { staticClass: "btn-group", attrs: { id: "preferedRoommates" } },
+        [
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-info btn-sm notActive",
+              attrs: { "data-toggle": "roommates", "data-title": "men" }
+            },
+            [_vm._v("Мъже")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-danger btn-sm notActive",
+              attrs: { "data-toggle": "roommates", "data-title": "women" }
+            },
+            [_vm._v("Жени")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-warning btn-sm notActive",
+              attrs: { "data-toggle": "roommates", "data-title": "any" }
+            },
+            [_vm._v("Без\n                            значение")]
+          )
+        ]
+      ),
       _vm._v(" "),
       _c("input", {
         attrs: { type: "hidden", name: "roommates", id: "roommates" }
@@ -40874,82 +41398,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "input-group",
-        staticStyle: { display: "none" },
-        attrs: { id: "gender" }
-      },
-      [
-        _c("div", { staticClass: "btn-group" }, [
-          _c(
-            "a",
-            {
-              staticClass: "btn-sm btn-primary notActive",
-              attrs: { "data-toggle": "gender", "data-title": "1" }
-            },
-            [_vm._v("Мъже")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "btn-sm btn-danger notActive",
-              attrs: { "data-toggle": "gender", "data-title": "2" }
-            },
-            [_vm._v("Жени")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "btn-sm btn-info notActive",
-              attrs: { "data-toggle": "gender", "data-title": "3" }
-            },
-            [_vm._v("И двете")]
-          )
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group" }, [
-      _c("div", { staticClass: "btn-group", attrs: { id: "radioBtn" } }, [
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-info btn-sm notActive",
-            attrs: { "data-toggle": "roommates", "data-title": "1" }
-          },
-          [_vm._v("Мъже")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-danger btn-sm notActive",
-            attrs: { "data-toggle": "roommates", "data-title": "1" }
-          },
-          [_vm._v("Жени")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-warning btn-sm notActive",
-            attrs: { "data-toggle": "roommates", "data-title": "1" }
-          },
-          [_vm._v("Без\n                            значение")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "hidden", name: "roommates", id: "roommates" }
-      })
+    return _c("h3", [
+      _vm._v("Изисквания\n                    "),
+      _c("small", { staticClass: "pull-right" }, [_vm._v("(по избор)")])
     ])
   },
   function() {
@@ -41175,4 +41626,4 @@ if (false) {
 // removed by extract-text-webpack-plugin
 
 /***/ })
-],[15]);
+],[16]);

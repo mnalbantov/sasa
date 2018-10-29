@@ -204,7 +204,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Obtain the user information from GitHub.
+     * Obtain the user information from Facebook.
      *
      * @return \Illuminate\Http\Response
      */
@@ -212,7 +212,7 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('facebook')->user();
 
-         $user->token;
+         echo '<pre>'.print_r($user,1).'</pre>';
     }
 
 }

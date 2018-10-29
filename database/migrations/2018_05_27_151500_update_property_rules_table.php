@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePropertyRulesTable extends Migration
+class UpdatePropertyRulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreatePropertyRulesTable extends Migration
      */
     public function up()
     {
-        Schema::create('property_rules', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('group',50);
-            $table->string('name',100);
+
+        if (Schema::hasTable('group'))
+            return;
+
+        Schema::table('property_rules', function (Blueprint $table) {
+            $table->string('group', 20)->after('id');
         });
     }
 
@@ -27,6 +29,5 @@ class CreatePropertyRulesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('property_rules');
     }
 }

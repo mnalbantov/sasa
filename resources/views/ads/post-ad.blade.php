@@ -155,7 +155,7 @@
                                         {{--<div class="col-sm-9">--}}
                                             {{--<input type="text" name="mobileNumber" class="form-control"--}}
                                                    {{--placeholder="ex, +912457895">--}}
-                                        {{--</div>--}}
+                                            {{--</div>--}}
                                     {{--</div>--}}
                                     {{--<div class="row form-group">--}}
                                         {{--<label class="col-sm-3 label-title">Address</label>--}}

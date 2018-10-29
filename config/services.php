@@ -37,7 +37,7 @@ return [
     'facebook' => [
         'client_id' => env('FB_APP_ID','186568278822612'),         // Your FB Client ID
         'client_secret' => env('FB_APP_SECRET','a1735fef76da17b8b2723b9bd62839a2'), // Your FB Client Secret
-        'redirect' => 'http://localhost:8000/login/facebook/calllback',
+        'redirect' => 'https://ba288bfb.ngrok.io/login/facebook/callback',
     ],
 
 ];

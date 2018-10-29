@@ -20,7 +20,9 @@ Route::group(['middleware'=>['web','auth']],function (){
     Route::get('/post-ad','AdController@showAdForm')->name('post-ad');
     Route::get('/getAdOptions','AdController@getAdOptions');
     Route::post('/post-ad','AdController@store')->name('post.ad');
+    Route::get('/ad/preview','AdController@preview')->name('preview.ad');
     Route::get('/ad/confirm','AdController@confirm')->name('confirm.ad');
+    Route::post('files/add', 'FileController@store');
 });
 Route::get('/login','Auth\LoginController@showLoginForm')->name('login');
 Route::get('/login/facebook','Auth\LoginController@redirectToProvider')->name('login.fb');

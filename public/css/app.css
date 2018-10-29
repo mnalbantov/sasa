@@ -10551,6 +10551,25 @@ input, select, a, .transition,
 input[type='checkbox'] {
 	opacity: 0;
 }
+.description-custom {
+	margin: -14% auto;
+	width: 94%;
+	border: 1px solid #ccc;
+	box-shadow: 6px 5px 20px #ccc;
+}
+.load-bar {
+	display:    block;
+	position:   fixed;
+	z-index:    1000;
+	top:        0;
+	left:       0;
+	height:     100%;
+	width:      100%;
+	background: rgba( 255, 255, 255, .8 )
+	url('http://sampsonresume.com/labs/pIkfp.gif')
+	50% 50%
+	no-repeat;
+}
 /* 
  *  Owl Carousel - Animate Plugin
  */

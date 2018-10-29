@@ -7,7 +7,7 @@
                 <label for="pac-input">Локация на жилището</label>
                 <input v-validate="'required'" data-vv-as="Локация" data-vv-id="1" name="location"
                        v-on:keypress.enter.prevent="show" id="pac-input" ref="autocomplete"
-                       placeholder="Например: бул Черни Връх, София"
+                       placeholder="Например: кв Лозенец, София"
                        class="form-control"
                        type="text"/>
                 <span class="help-block" v-if="errors.has('location')">
@@ -40,33 +40,46 @@
                     </div>
                     <div class="row form-group">
                         <label class="col-sm-3">Тип жилище<span class="required">*</span></label>
-                        <div class="col-sm-9 user-type">
-
-                            <span v-for="type,index in propertyTypes">
-                                <input :id="type.name" ref="type" data-vv-id="2" name="propertyType" :value="type.id"
+                        <div class="col-sm-9">
+                            <div data-vv-id="2">
+                            <span v-for="type in propertyTypes">
+                               <input :id="type.name"
                                        type="radio"
+                                       name="propertyType"
+                                       v-validate="'required'"
+                                      data-vv-as="Тип жилище"
+                                       :value="type.id"
                                        v-model="propertyType">
                                 <label :for="type.name">{{ type.name }}</label>
                             </span>
+
+                                <!--<select class="form-control" name="propertyT" v-model="propertyType" id="propertyType">-->
+                                    <!--<option disabled value="0" selected="selected">Избери тип на жилището</option>-->
+                                    <!--<option v-for="type in propertyTypes" v-model="propertyType" :value="type.id">{{ type.name}}</option>-->
+                                <!--</select>-->
+                            </div>
+                            <span v-show="errors.has('propertyType')" class="text-danger"><strong>{{errors.first('propertyType')}}</strong></span>
+
                         </div>
                     </div>
                     <div class="row form-group additional">
                         <label class="col-sm-3 label-title">Удобства<span
                                 class="required">*</span></label>
                         <div class="col-sm-9" :class="{'has-error': errors.has('propertyAttr[]')}">
-                            <div class="checkbox" v-model="chosenAttributes" v-validate="'required:true'" data-vv-id='3'
-                                 data-vv-as="Удобства">
+                            <div data-vv-id='3' class="checkbox">
                                 <div v-for="attr in propertyAttributes">
                                     <label :for="attr.name">
-                                        <input v-model="chosenAttributes" type="checkbox" name="propertyAttr[]"
+                                        <input v-model="chosenAttributes"  type="checkbox" name="propertyAttr[]"
                                                :value="attr.id"
+                                               v-validate="'required:true'"
+                                               data-vv-as="Удобства"
                                                :id="attr.name">{{ attr.name }}
                                     </label>
                                 </div>
+                                <span v-show="errors.has('propertyAttr[]')" class="text-danger"><strong>{{errors.first('propertyAttr[]')}}</strong></span>
+
                             </div>
-                            <span class="help-block" v-if="errors.has('propertyAttr[]')">
-                                <strong>{{errors.first('propertyAttr[]')}}</strong>
-                            </span>
+
                         </div>
                     </div>
                     <div class="row form-group add-title">
@@ -86,18 +99,21 @@
 
                     <div class="row form-group select-condition">
                         <label class="col-sm-3">Състояние на жилището<span class="required">*</span></label>
-                        <div class="col-sm-9">
-                            <input type="radio" name="condition" value="new" id="new">
+                        <div class="col-sm-9" data-vv-id="5">
+                            <input type="radio" v-validate="'required'" data-vv-as="Състояние" v-model="condition" name="condition" value="0" id="new">
                             <label for="new">Ново</label>
-                            <input type="radio" name="condition" value="used" id="used">
+                            <input type="radio" v-validate="'required'" data-vv-as="Състояние" v-model="condition" name="condition" value="1" id="used">
                             <label for="used">Използвано</label>
                         </div>
+                        <span v-show="errors.has('condition')" class="text-danger"><strong>{{errors.first('condition')}}</strong></span>
+
                     </div>
                     <div class="row form-group select-price">
                         <label class="col-sm-3 label-title">Наем (за месец)<span class="required"> *</span></label>
                         <div class="col-sm-6" :class="{'has-error': errors.has('price')}">
                             <label>BGN лв</label>
-                            <input type="number" step="any" data-vv-as="Наем" v-model="price" name="price" data-vv-id="5"
+                            <input type="number" step="any" data-vv-as="Наем" v-model="price" name="price"
+                                   data-vv-id="6"
                                    v-validate="'required|min:0'" placeholder="650 лв" class="form-control">
                             <span class="help-block" v-if="errors.has('price')">
                                 <strong>{{errors.first('price')}}</strong>
@@ -109,7 +125,8 @@
                             </div>
                             <div id="utilityCosts" style="display: none;" class=" col-sm-5">
                                 <small for="">Комунални сметки на месец (лв)</small>
-                                <input type="number"  step="any" name="utilityCosts" value="" class="form-control" id="text1"
+                                <input type="number" step="any" v-model="utilityCosts" name="utilityCosts" value="" class="form-control"
+                                       id="text1"
                                        placeholder="300 лв">
                             </div>
                         </div>
@@ -117,37 +134,59 @@
                     <hr>
                     <h3>Текущи съквартиранти</h3>
                     <br>
-                    <label for="fun" class="control-label">Брой съквартиранти</label>
+                    <label class="control-label">Брой съквартиранти</label>
                     <div class="input-group">
                         <div id="radioBtn" class="btn-group">
-                            <a class="btn btn-info btn-sm notActive" data-toggle="roommates" data-title="1">0</a>
-                            <a class="btn btn-info btn-sm notActive" data-toggle="roommates" data-title="1">1</a>
-                            <a class="btn btn-info btn-sm notActive" data-toggle="roommates" data-title="2">2</a>
-                            <a class="btn btn-info btn-sm notActive" data-toggle="roommates" data-title="3">3</a>
-                            <a class="btn btn-info btn-sm notActive" data-toggle="roommates" data-title="4+">4+</a>
+                            <a @click="resetCounter()" class="btn btn-info btn-sm notActive" data-toggle="roommates" data-title="0">0</a>
+                            <a @click="handler(currentRoommates = 1,setSingle())" v-model="currentRoommates" class="btn btn-info btn-sm notActive" data-toggle="roommates" data-title="1">1</a>
+                            <a @click="currentRoommates = 2" v-model="currentRoommates" class="btn btn-info btn-sm notActive" data-toggle="roommates" data-title="2">2</a>
+                            <a @click="currentRoommates = 3" v-model="currentRoommates" class="btn btn-info btn-sm notActive" data-toggle="roommates" data-title="3">3</a>
+                            <a @click="currentRoommates = 4" v-model="currentRoommates" class="btn btn-info btn-sm notActive" data-toggle="roommates" data-title="4">4+</a>
                         </div>
-                        <input type="hidden" name="roommates" id="roommates">
+                        <input type="hidden" name="roommates" id="roommate">
                     </div>
                     <br>
                     <div id="gender" style="display: none;" class="input-group">
                         <div class="btn-group">
-                            <a class="btn-sm btn-primary notActive" data-toggle="gender" data-title="1">Мъже</a>
-                            <a class="btn-sm btn-danger notActive" data-toggle="gender" data-title="2">Жени</a>
-                            <a class="btn-sm btn-info notActive" data-toggle="gender" data-title="3">И двете</a>
+                            <input v-validate="'required:true'" data-vv-id="4" data-vv-as="Пол"  type="radio" name="genderMates" value="1" id="men" v-model="genderMates" class="btn-sm btn-primary notActive" data-toggle="roommates" data-title="1">
+                            <label id="labelMan" for="men">Мъже</label>
+                            <input type="radio" name="genderMates" value="2" id="women" v-model="genderMates" class="btn-sm btn-primary notActive" data-toggle="roommates" data-title="2">
+                            <label id="labelWoman" for="women">Жени</label>
+                            <input type="radio" name="genderMates" value="3" id="mixed" v-model="genderMates" class="btn-sm btn-primary notActive" data-toggle="roommates" data-title="3">
+                            <label id="both" for="women">И двете</label>
                         </div>
                     </div>
                     <hr>
                     <h3>Предпочитани съквартиранти</h3><br>
                     <div class="input-group">
-                        <div id="radioBtn" class="btn-group">
-                            <a class="btn btn-info btn-sm notActive" data-toggle="roommates" data-title="1">Мъже</a>
-                            <a class="btn btn-danger btn-sm notActive" data-toggle="roommates" data-title="1">Жени</a>
-                            <a class="btn btn-warning btn-sm notActive" data-toggle="roommates" data-title="1">Без
+                        <div id="preferedRoommates" class="btn-group">
+                            <a class="btn btn-info btn-sm notActive" data-toggle="roommates" data-title="men">Мъже</a>
+                            <a class="btn btn-danger btn-sm notActive" data-toggle="roommates" data-title="women">Жени</a>
+                            <a class="btn btn-warning btn-sm notActive" data-toggle="roommates" data-title="any">Без
                                 значение</a>
                         </div>
                         <input type="hidden" name="roommates" id="roommates">
                     </div>
+                    <hr>
+                    <h3>Изисквания
+                        <small class="pull-right">(по избор)</small>
+                    </h3>
+                    <div class="row form-group ">
 
+                        <div class="col-sm-9">
+                            <div class="checkbox" v-model="chosenRules">
+                                <span v-for="rule in propertyRules">
+                                    <label :for="rule.name"><input v-model="chosenRules" type="checkbox" name="propertyRules[]"
+                                               :value="rule.id"
+                                               :id="rule.name">{{ rule.name }} &nbsp;</label>
+                                </span>
+                            </div>
+                            <span class="help-block" v-if="errors.has('propertyAttr[]')">
+                                <strong>{{errors.first('propertyAttr[]')}}</strong>
+                            </span>
+                        </div>
+                    </div>
+                    <br>
                 </div><!-- section -->
 
                 <div class="section seller-info">
@@ -163,7 +202,7 @@
                             <input type="radio" name="sellerType" value="dealer" id="dealer">
                             <label for="dealer">Агент</label>
                         </div>
-                        <div  class="row col-sm-9 checkbox">
+                        <div class="row col-sm-9 checkbox">
                             <label for="living">
                                 <input type="checkbox" name="send" id="living">
                                 Живея в жилището
@@ -239,11 +278,21 @@
                         owner of this item and using Trade to find a genuine buyer.
                     </label>
                     <button type="submit" class="btn btn-primary">Публикувай</button>
-                </div><!-- section -->
-
+                </div>
+                <div v-if="errors.any()" class="panel-body alert alert-danger">
+                    <p>Упс... Явно си забравил да попълниш нещо. Върни се нагоре и провери пак!</p>
+                </div>
+                <div v-if="errorForm" :errors="validationErrors">
+                    <ul class="panel-body alert alert-danger" v-for="err in validationErrors">
+                        <li>{{err[0]}}</li>
+                    </ul>
+                </div>
+                <!-- section -->
             </fieldset>
         </form><!-- form -->
+        <div v-if="submitted" class="load-bar"></div>
     </div>
+
 </template>
 <script>
     import Vue from 'vue';
@@ -252,6 +301,8 @@
 
     Validator.localize('bg');
     Vue.use(VueResource);
+
+    window.axios = require('axios');
     export default {
         name: 'app',
         data() {
@@ -259,11 +310,18 @@
                 csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                 propertyTypes: [],
                 propertyAttributes: {},
+                propertyRule: [],
+                propertyRules: {},
                 user: {},
-                propertyType: 0,
+                propertyType: '',
+                currentRoommates: 0,
+                genderMates : 0,
                 chosenAttributes: [],
+                chosenRules: [],
                 title: '',
+                condition: '',
                 price: '',
+                utilityCosts: 0,
                 lat: 0,
                 lng: 0,
                 address: '',
@@ -272,18 +330,21 @@
                 zip_code: '',
                 showForm: null,
                 landlord: false,
-            }
+                validationErrors: [],
+                errorForm : false,
+                submitted : false,}
         },
 
         mounted() {
+
             this.$http.get('/getAdOptions', {
                 function () {
                 }
             }).then(function (data) {
-                this.propertyTypes = data.body.propertyTypes
+                this.propertyTypes = data.body.propertyTypes;
+                this.propertyRules = data.body.propertyRules;
                 this.propertyAttributes = data.body.propertyAttributes;
                 this.user = data.body.user;
-
             });
             let options = {
                 types: ['geocode'],
@@ -297,7 +358,7 @@
                 center: {lat: 42.681771, lng: 23.322644},
                 minZoom: 9,
                 maxZoom: 17,
-                zoom: 12,
+                 zoom: 12,
                 scrollwheel: false,
                 navigationControl: false,
                 mapTypeControl: false,
@@ -323,7 +384,7 @@
                 for (var i = 0; i < ac.length; i++) {
                     for (var j = 0; j < ac[i].types.length; j++) {
                         if (ac[i].types[j] == 'neighborhood') {
-                            this.neighborhood = ac[i].short_name;
+                            this.neighborhood = ac[i].shorterrorForm_name;
                         }
                         if (ac[i].types[j] == 'postal_code') {
                             this.zip_code = ac[i].short_name;
@@ -345,10 +406,32 @@
                         this.$el.querySelector('[data-vv-id="' + this.$validator.errors.items[0].id + '"]').scrollIntoView();
                         return false;
                     }
-                    this.$refs.form.submit();
+                    axios.post('/post-ad',(this.$data))
+                        .then(response => {
+                            this.validationErrors = [];
+                            this.errorForm  = false;
+                            this.submitted  = true;
+                            console.log(response);
+
+                        }).catch(error => {
+                        if (! _.isEmpty(error.response)) {
+                            if (error.response.status = 422) {
+                                this.validationErrors = error.response.data.errors;
+                                this.errorForm = true;
+                                this.submitted = false;
+                                console.log(this.validationErrors);
+                            }
+                        }
+                    });
+                    // this.$http.post("/post-ad");
+                    // this.$refs.form.submit();
+                    // console.log(this.$refs.form);
+                    // console.log(JSON.stringify(this.data));
+                    // return;
                 }).catch(reason => {
                     console.log(reason);
                 });
+
             },
             confirm: function () {
                 if (this.lat === 0 || this.lng === 0) {
@@ -356,7 +439,13 @@
                 }
                 this.showForm = true;
             },
-
+            resetCounter: function() {
+                this.currentRoommates = 0;
+                this.genderMates = 0;
+            },
+            setSingle: function() {
+                this.genderMates = 0;
+            },
             show: function () {
                 if (this.lat === 0 || this.lng === 0 || !this.address) {
                     this.error = true;

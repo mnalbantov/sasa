@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="base_url" content="{{ URL::to('/') }}">
     <title>{{ $title or 'Стая БГ | Намери своята квартира - Портал за споделени квартири и апартаменти' }}</title>
 
     <!-- Fonts -->
@@ -19,6 +20,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEw6OPS5Cscr1vP_VCb_PfAmlTU0onm5k&libraries=places&language=bg"></script>
 </head>
 <body>
+
     @include('partials._header')
 
     @yield('content')
